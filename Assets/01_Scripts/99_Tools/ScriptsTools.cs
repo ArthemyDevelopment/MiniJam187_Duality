@@ -131,6 +131,15 @@ namespace ArthemyDev.ScriptsTools
                 return (T)formatter.Deserialize(stream);
             }
         }
+
+        public static void DestroyAllChildrens(Transform target)
+        {
+            foreach (Transform child in target)
+            {
+                GameObject.Destroy(child.gameObject);
+            }
+        }
+        
 #if UNITY_EDITOR
         //Get all instances of a scriptableObject in the project, useful when setting up databases
         public static T[] GetAllInstances<T>() where T : ScriptableObject
