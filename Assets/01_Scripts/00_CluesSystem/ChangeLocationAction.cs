@@ -16,4 +16,9 @@ public class ChangeLocationAction : BaseAction
         TransitionsManager.current.TransitionLocation(LocationTarget);
         
     }
+
+    public void HardTPCamera()
+    {
+        Camera.main.transform.position = LocationTarget.position;
+    }
 }

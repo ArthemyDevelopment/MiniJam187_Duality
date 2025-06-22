@@ -8,9 +8,9 @@ public class InitianGameConfigManager : MonoBehaviour
     public List<Clue> StartingItems;
     public List<Information> StartingInfo;
 
-    private void Awake()
+    private void Start()
     {
-         StartLocation.TPCamera();
+         StartLocation.HardTPCamera();
          foreach (var clue in StartingItems)
          {
             InventoryManager.current.StoreClue(clue);    
