@@ -15,7 +15,18 @@ public class InventoryManager : SingletonManager<InventoryManager>
         for (int i = 0; i < InventorySlots.Length; i++)
         {
             if(InventorySlots[i].GetClueInSlot()!=null) continue;
-            if (clue.ClueGiveInformation()) InformationManager.current.AddInformation(clue.GetInformation());
+            if (clue.ClueGiveInformation())
+            {
+                if(!clue.ClueMultipleInformation())InformationManager.current.AddInformation(clue.GetInformation());
+                else
+                {
+                    List<Information> temp = clue.GetMultiInformation();
+                    for (int j = 0; j < temp.Count; j++)
+                    {
+                        InformationManager.current.AddInformation(temp[j]);
+                    }
+                }
+            }
             InventorySlots[i].StoreClue(clue);
             CluesInInventory.Add(clue);
             break;

@@ -14,7 +14,9 @@ public class Clue : SerializedScriptableObject
     [SerializeField] private Dictionary<Clue,Clue> Combinations = new Dictionary<Clue, Clue>();
 
     [SerializeField] private bool GiveInformation;
-    [HideIf("@this.GiveInformation == false")][SerializeField] private Information ClueInformation;
+    [HideIf("@this.GiveInformation == false")] [SerializeField] private bool multipleInformation;
+    [HideIf("@this.GiveInformation == false || multipleInformation== true")][SerializeField] private Information ClueInformation;
+    [HideIf("@this.GiveInformation == false|| multipleInformation== false")][SerializeField] private List<Information> MultiInformation= new List<Information>();
     
     public Sprite GetIcon() { return Icon; }
     public string GetName() { return Name; }
@@ -23,7 +25,10 @@ public class Clue : SerializedScriptableObject
 
     public bool ClueGiveInformation() { return GiveInformation; }
 
+    public bool ClueMultipleInformation() { return multipleInformation; }
+
     public Information GetInformation() { return ClueInformation;}
+    public List<Information> GetMultiInformation() { return MultiInformation;}
 
     public Clue()
     {

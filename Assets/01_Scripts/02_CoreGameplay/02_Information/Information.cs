@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -8,7 +9,9 @@ public class Information : SerializedScriptableObject
     public InfoTypes type;
     public Sprite icon; 
     [TextArea] public string informationText;
-    [SerializeField] public Information OverrideInfo;
+    [SerializeField] public List<Information> OverrideInfo;
+    [SerializeField] public List<Information> BlockedByInfo;
+    
 }
 
 public enum InfoTypes

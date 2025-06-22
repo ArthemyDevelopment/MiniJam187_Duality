@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using ArthemyDev.ScriptsTools;
 using UnityEngine;
 
@@ -10,7 +11,25 @@ public class InformationManager : SingletonManager<InformationManager>
     public void AddInformation(Information info)
     {
         if (InformationList.Contains(info)) return;
-        if(info.OverrideInfo!=null) RemoveInformation(info.OverrideInfo);
+
+        for (int i = 0; i < info.BlockedByInfo.Count; i++)
+        {
+            if (InformationList.Contains(info.BlockedByInfo[i]))
+            {
+                return;
+                break;
+            }
+        }
+        
+        
+        if (info.OverrideInfo.Count > 0)
+        {
+            for (int i = 0; i < info.OverrideInfo.Count; i++)
+            {
+                RemoveInformation(info.OverrideInfo[i]);
+            }
+
+        }
         InformationList.Add(info);
     }
 

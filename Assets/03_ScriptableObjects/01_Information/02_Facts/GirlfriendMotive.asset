@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8add0fd47251b524295dc07f2948b2c2, type: 3}
+  m_Name: GirlfriendMotive
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  type: 2
+  icon: {fileID: 0}
+  informationText: 'The novel draft reveals that the victim''s girlfriend was married
+    with a millionare before dating him. During the relationshiop, she stole money
+    from his husband companies to help finance the writing of new books and the growth
+    of the publishing house '
+  OverrideInfo:
+  - {fileID: 11400000, guid: 970fb8c32db0d2e49a39961c37ef7621, type: 2}
+  - {fileID: 11400000, guid: 03754b53c74ce5a448337248e14681c3, type: 2}
+  - {fileID: 11400000, guid: 822548fe85ef75a40ac58c2d0ee4c7ef, type: 2}
+  BlockedByInfo: []
