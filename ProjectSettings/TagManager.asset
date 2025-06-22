@@ -15,6 +15,7 @@ TagManager:
   - NotebookSolutionMotive
   - NotebookSolutionKeyEvidence
   - Mouse
+  - StopMovementCamera
   layers:
   - Default
   - TransparentFX
