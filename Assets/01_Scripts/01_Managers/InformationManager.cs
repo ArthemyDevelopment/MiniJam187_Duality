@@ -1,8 +1,10 @@
 using System.Collections.Generic;
-using System.Linq;
+
 using ArthemyDev.ScriptsTools;
 using UnityEngine;
 
+
+[DefaultExecutionOrder(-1)]
 public class InformationManager : SingletonManager<InformationManager>
 {
     public List<Information> InformationList;
@@ -10,8 +12,10 @@ public class InformationManager : SingletonManager<InformationManager>
 
     public void AddInformation(Information info)
     {
+        if (info == null) return;
         if (InformationList.Contains(info)) return;
 
+        
         for (int i = 0; i < info.BlockedByInfo.Count; i++)
         {
             if (InformationList.Contains(info.BlockedByInfo[i]))
@@ -21,6 +25,7 @@ public class InformationManager : SingletonManager<InformationManager>
             }
         }
         
+        NotificationAlert.current.TriggerNotificacionNewInformation();
         
         if (info.OverrideInfo.Count > 0)
         {

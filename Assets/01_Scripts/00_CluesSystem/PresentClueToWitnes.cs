@@ -21,13 +21,14 @@ public class PresentClueToWitnes : BaseAction
     {
 
         Clue temp = InteractionsManager.current.GetSelectedItem();
+        if (temp == null) return;
         if(GetInfo.ContainsKey(temp))
         {
             for (int i = 0; i < GetInfo[temp].InfoToGive.Count; i++)
             {
                 InformationManager.current.AddInformation(GetInfo[temp].InfoToGive[i]);
-                GetInfo[temp].OnUse.Invoke();
             }
+            GetInfo[temp].OnUse.Invoke();
             
         }
         InteractionsManager.current.DeselectItem();

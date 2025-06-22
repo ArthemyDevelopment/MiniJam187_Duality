@@ -18,13 +18,15 @@ public class UseClueAction : BaseAction
     {
         if (isUsed)
         {
+            Debug.Log("Check clue aready used");
             InteractionsManager.current.DeselectItem();
             //Dialog
             return;
         }
         if(InteractionsManager.current.GetSelectedItem() == requiredClue)
         { 
-            InventoryManager.current.RemoveClue(requiredClue);
+            Debug.Log("Check clue correct Required");
+            if(!requiredClue.IsReusable()) InventoryManager.current.RemoveClue(requiredClue);
             OnUse.Invoke();
             isUsed = true;
         }

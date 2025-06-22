@@ -3,11 +3,11 @@ using UnityEngine;
 
 public class NotebookSolveCrimeController : MonoBehaviour
 {
-    [SerializeField] private SolutionClue WeaponSolutionClue;
+    public SolutionClue WeaponSolutionClue;
     [SerializeField] private InventorySlotController WeaponSlot;
-    [SerializeField] private SolutionClue MotiveSolutionClue;
+    public SolutionClue MotiveSolutionClue;
     [SerializeField] private InventorySlotController MotiveSlot;
-    [SerializeField] private SolutionClue KeyEvidenceSolutionClue;
+    public SolutionClue KeyEvidenceSolutionClue;
     [SerializeField] private InventorySlotController KeyEvidenceSlot;
 
     [SerializeField] private GameObject SolveCrimeButton;
@@ -21,9 +21,12 @@ public class NotebookSolveCrimeController : MonoBehaviour
 
     public void CheckSolutionWeapon(Clue clue)
     {
+
         if (clue.GetType() != typeof(SolutionClue)) return;
+
         if ((clue as SolutionClue).type != SolutionTypes.WEAPON) return;
         
+        WeaponSolutionClue = clue as SolutionClue;
         WeaponSlot.StoreClue(clue);
         
         CheckSolutions();
@@ -35,6 +38,7 @@ public class NotebookSolveCrimeController : MonoBehaviour
         if (clue.GetType() != typeof(SolutionClue)) return;
         if ((clue as SolutionClue).type != SolutionTypes.MOTIVE) return;
         
+        MotiveSolutionClue = clue as SolutionClue;
         MotiveSlot.StoreClue(clue);
         
         CheckSolutions();
@@ -46,6 +50,7 @@ public class NotebookSolveCrimeController : MonoBehaviour
         if (clue.GetType() != typeof(SolutionClue)) return;
         if ((clue as SolutionClue).type != SolutionTypes.KEYEVIDENCE) return;
         
+        KeyEvidenceSolutionClue = clue as SolutionClue;
         KeyEvidenceSlot.StoreClue(clue);
         
         CheckSolutions();

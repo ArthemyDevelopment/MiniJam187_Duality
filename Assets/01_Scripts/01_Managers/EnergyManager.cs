@@ -1,17 +1,20 @@
 using ArthemyDev.ScriptsTools;
 using UnityEngine;
 using UnityEngine.UI;
+using Sirenix.OdinInspector;
 
 public class EnergyManager : SingletonManager<EnergyManager>
 {
     [SerializeField]private float minimunEnergyRequired;
+    private float halfEnergyThreshold;
     [SerializeField] private float TotalEnergy;
     [SerializeField] private Image EnergyBar;
 
     protected override void Awake()
     {
         base.Awake();
-        TotalEnergy = ((float)(minimunEnergyRequired * 1.5) * 2);
+        halfEnergyThreshold = (float)(minimunEnergyRequired * 1.5);
+        TotalEnergy = ( halfEnergyThreshold* 2);
         CurrentEnergy = TotalEnergy;
     }
 
@@ -26,20 +29,28 @@ public class EnergyManager : SingletonManager<EnergyManager>
         }
         set
         {
-            CheckEnergyRemaining(value);
             _currentEnergy = value;
+            CheckEnergyRemaining();
         }
     }
 
-    private void CheckEnergyRemaining(float value)
+    [Button]
+    public void SetEnergyLow() { CurrentEnergy = 1;}
+    
+    
+    private void CheckEnergyRemaining()
     {
-        EnergyBar.fillAmount = ScriptsTools.MapValues(value, 0, TotalEnergy, 0, 1);
-        //if(value==0) OutOfTimeEnding; 
+        EnergyBar.fillAmount = ScriptsTools.MapValues(_currentEnergy, 0, TotalEnergy, 0, 1);
+        if (_currentEnergy <= 0)
+        {
+            Debug.Log("out of time");
+            TransitionsManager.current.ChangeScene("OutOfTimeEnding");
+        }
     }
 
     public bool IsSolutionOnTime()
     {
-        if (CurrentEnergy >= (minimunEnergyRequired * 1.5)) return true;
+        if (CurrentEnergy >= halfEnergyThreshold) return true;
         else return false;
     }
 

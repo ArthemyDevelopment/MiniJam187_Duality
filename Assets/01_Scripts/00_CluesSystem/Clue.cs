@@ -17,11 +17,16 @@ public class Clue : SerializedScriptableObject
     [HideIf("@this.GiveInformation == false")] [SerializeField] private bool multipleInformation;
     [HideIf("@this.GiveInformation == false || multipleInformation== true")][SerializeField] private Information ClueInformation;
     [HideIf("@this.GiveInformation == false|| multipleInformation== false")][SerializeField] private List<Information> MultiInformation= new List<Information>();
+
+    [SerializeField] private bool ForceReplaceClue;
+
+    [HideIf("@this.ForceReplaceClue == false")] public Clue clueToReplace;
     
     public Sprite GetIcon() { return Icon; }
     public string GetName() { return Name; }
     public string GetDesc(){return Description;}
     public bool IsReusable() { return Reusable;}
+    public bool GetForceToReplace() { return ForceReplaceClue;}
 
     public bool ClueGiveInformation() { return GiveInformation; }
 
@@ -55,7 +60,7 @@ public class Clue : SerializedScriptableObject
     {
         ClueData tempData;
         tempData.clueIcon = Icon;
-        tempData.clueName = name;
+        tempData.clueName = Name;
         tempData.clueDesc = Description;
         tempData.clueCombinations = Combinations;
 

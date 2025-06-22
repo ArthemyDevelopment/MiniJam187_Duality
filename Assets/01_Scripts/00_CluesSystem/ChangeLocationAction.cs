@@ -8,6 +8,12 @@ public class ChangeLocationAction : BaseAction
     public override void TriggerAction()
     {
         base.TriggerAction();
-        Camera.main.transform.position = LocationTarget.position;
+        TPCamera();
+    }
+
+    public void TPCamera()
+    {
+        TransitionsManager.current.TransitionLocation(LocationTarget);
+        
     }
 }
