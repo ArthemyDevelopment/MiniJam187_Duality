@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1017758303fc37f49a7712b699503472, type: 3}
+  m_Name: NovelDraft
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: Combinations
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[Clue, Assembly-CSharp],[Clue,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.ObjectEqualityComparer`1[[Clue, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  Reusable: 0
+  Icon: {fileID: 21300000, guid: 1a17e8ddbdb0f354984c0f4050646124, type: 3}
+  Name: Draft novel
+  Description: The draft of the victim's latest novel. Tells secrets disguised as
+    fiction involving his girlfriend and best friend. Could ruin their lives.
+  GiveInformation: 1
+  multipleInformation: 1
+  ClueInformation: {fileID: 0}
+  MultiInformation:
+  - {fileID: 11400000, guid: b8989a8b7fffeec49bc65abac119847f, type: 2}
+  - {fileID: 11400000, guid: e7b1b28f82393b54f903d4b831bcda17, type: 2}
+  - {fileID: 11400000, guid: 4e6b31e30bde2b746928c03ac60c948a, type: 2}
+  - {fileID: 11400000, guid: aba0c6a2cf8154e4db96253224fb4dee, type: 2}
+  ForceReplaceClue: 0
+  clueToReplace: {fileID: 0}
+  type: 1

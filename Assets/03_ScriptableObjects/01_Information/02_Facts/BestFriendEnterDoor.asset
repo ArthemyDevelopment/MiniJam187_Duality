@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8add0fd47251b524295dc07f2948b2c2, type: 3}
+  m_Name: BestFriendEnterDoor
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  type: 2
+  icon: {fileID: 0}
+  informationText: 'The best friend got in and out the property through the main
+    door before midnight.
+
+    At arraival he looked angry. When leaving he looked
+    scared. He was a few minutes in there.'
+  OverrideInfo:
+  - {fileID: 11400000, guid: a40e82d8a9fd94347b3ba72e175eee09, type: 2}
+  - {fileID: 11400000, guid: 784c00a3d3f801640a609e11798c4425, type: 2}
+  BlockedByInfo: []

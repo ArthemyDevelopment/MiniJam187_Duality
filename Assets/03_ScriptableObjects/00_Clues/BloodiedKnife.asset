@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af15be85875445a4f868b706a07ea84b, type: 3}
+  m_Name: BloodiedKnife
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 11400000, guid: 97b5cdbfd6db89f4d85345f873773ff0, type: 2}
+    - {fileID: 11400000, guid: 409a1cf545b34284ea8468620046fab8, type: 2}
+    - {fileID: 11400000, guid: 47e655977c921324c8e370a4436067dc, type: 2}
+    - {fileID: 11400000, guid: 49a8c0efefc1d994aa2cb8fc08f53371, type: 2}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: Combinations
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[Clue, Assembly-CSharp],[Clue,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.ObjectEqualityComparer`1[[Clue, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 0
+    - Name: $v
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 2
+    - Name: $v
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  Reusable: 1
+  Icon: {fileID: 21300000, guid: 8dfb9de3ef491ed42bf87bc8a1729b48, type: 3}
+  Name: Bloody Knife
+  Description: A knife with blood in the tip.
+  GiveInformation: 1
+  multipleInformation: 0
+  ClueInformation: {fileID: 11400000, guid: 67f6d8f24e4b66f40b65338adc77a036, type: 2}
+  MultiInformation: []

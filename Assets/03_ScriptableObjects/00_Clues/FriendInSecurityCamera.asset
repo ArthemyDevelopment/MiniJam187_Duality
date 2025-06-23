@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1017758303fc37f49a7712b699503472, type: 3}
+  m_Name: FriendInSecurityCamera
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: Combinations
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[Clue, Assembly-CSharp],[Clue,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.ObjectEqualityComparer`1[[Clue, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  Reusable: 0
+  Icon: {fileID: 21300000, guid: 30f82ee8cd1fd2a46a2eb5f2f15e5abc, type: 3}
+  Name: Security Camera footage
+  Description: Footage from the security camera in the front door. The victim's best
+    friend is shown entering and leaving the house shortly before midnight. He appears
+    angry as he enters and frightened as he leaves.
+  GiveInformation: 1
+  multipleInformation: 0
+  ClueInformation: {fileID: 11400000, guid: 98c151d733e17c74aaace6cda0acdce9, type: 2}
+  MultiInformation: []
+  type: 2
