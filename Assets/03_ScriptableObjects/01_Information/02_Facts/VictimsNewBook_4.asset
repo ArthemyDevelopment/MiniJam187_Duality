@@ -24,7 +24,7 @@ MonoBehaviour:
   type: 2
   icon: {fileID: 0}
   informationText: The victim was working on his new book. His girlfriend and best
-    friends had issues with something about this draft.
+    friend had issues with something about this draft.
   OverrideInfo:
   - {fileID: 11400000, guid: 5db3fc9996c6b6744af2708ebf5c362d, type: 2}
   BlockedByInfo:

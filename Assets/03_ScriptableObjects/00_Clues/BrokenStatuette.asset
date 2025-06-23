@@ -58,8 +58,10 @@ MonoBehaviour:
   Reusable: 0
   Icon: {fileID: 21300000, guid: 99d37b3270c435e4cbbefd3b57d2b0ac, type: 3}
   Name: Broken Statuette
-  Description: A statuette broken cause of a heavy impact
+  Description: A statuette broken by a heavy impact.
   GiveInformation: 0
   multipleInformation: 0
   ClueInformation: {fileID: 0}
   MultiInformation: []
+  ForceReplaceClue: 0
+  clueToReplace: {fileID: 0}

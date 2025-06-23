@@ -23,7 +23,7 @@ MonoBehaviour:
     SerializationNodes: []
   type: 1
   icon: {fileID: 0}
-  informationText: Looks like someone could enter and leave throught the windows
-    without being detected by the cameras.
+  informationText: Looks like someone could enter and leave through the windows without
+    being detected by the cameras.
   OverrideInfo: []
   BlockedByInfo: []

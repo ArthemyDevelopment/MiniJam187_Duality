@@ -9,6 +9,8 @@ public class PresentClueToWitnes : BaseAction
 
     [OdinSerialize]private Dictionary<Clue, WitnesInformation> GetInfo;
 
+    public UnityEvent OnNoInteraction;
+
     private bool isUsed;
     
     public override void TriggerAction()
@@ -30,6 +32,10 @@ public class PresentClueToWitnes : BaseAction
             }
             GetInfo[temp].OnUse.Invoke();
             
+        }
+        else
+        {
+            OnNoInteraction.Invoke();
         }
         InteractionsManager.current.DeselectItem();
         

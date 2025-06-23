@@ -41,9 +41,17 @@ public class EnergyManager : SingletonManager<EnergyManager>
     private void CheckEnergyRemaining()
     {
         EnergyBar.fillAmount = ScriptsTools.MapValues(_currentEnergy, 0, TotalEnergy, 0, 1);
+        if(_currentEnergy<= halfEnergyThreshold/3)
+        {
+            MusicManager.current.SetMusicAlmostOver();   
+        }
+        else if (_currentEnergy <= halfEnergyThreshold)
+        {
+            MusicManager.current.SetMusicHalfThreshold();
+        }
+        
         if (_currentEnergy <= 0)
         {
-            Debug.Log("out of time");
             TransitionsManager.current.ChangeScene("OutOfTimeEnding");
         }
     }

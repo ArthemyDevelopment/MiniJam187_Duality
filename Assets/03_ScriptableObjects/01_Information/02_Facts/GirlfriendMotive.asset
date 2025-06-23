@@ -23,10 +23,10 @@ MonoBehaviour:
     SerializationNodes: []
   type: 2
   icon: {fileID: 0}
-  informationText: 'The novel draft reveals that the victim''s girlfriend was married
-    with a millionare before dating him. During the relationshiop, she stole money
-    from his husband companies to help finance the writing of new books and the growth
-    of the publishing house '
+  informationText: The new draft reveals that the victim's girlfriend was married
+    with a millionare while dating him. During the relationshiop, she stole money
+    from his husband's companies to help finance the writing of new books and the
+    growth of the publishing house.
   OverrideInfo:
   - {fileID: 11400000, guid: 970fb8c32db0d2e49a39961c37ef7621, type: 2}
   - {fileID: 11400000, guid: 03754b53c74ce5a448337248e14681c3, type: 2}

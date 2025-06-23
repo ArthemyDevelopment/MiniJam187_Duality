@@ -1,11 +1,17 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CareTakerDiaryFirst : MonoBehaviour
 {
 
     public List<Information> InfoShowCaretakerFirst;
     public List<Information> InfoShowOthersFirst;
+
+    public UnityEvent OnFirst;
+    public UnityEvent OnOther;
+    
+    
     
     private bool DiaryShowToOthers;
 
@@ -22,6 +28,7 @@ public class CareTakerDiaryFirst : MonoBehaviour
             {
                 InformationManager.current.AddInformation(InfoShowOthersFirst[i]);
             }
+            OnOther.Invoke();
         }
         else
         {
@@ -29,6 +36,7 @@ public class CareTakerDiaryFirst : MonoBehaviour
             {
                 InformationManager.current.AddInformation(InfoShowCaretakerFirst[i]);
             }
+            OnFirst.Invoke();
         }
     }
 }

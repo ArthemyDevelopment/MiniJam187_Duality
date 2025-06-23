@@ -25,7 +25,7 @@ MonoBehaviour:
   icon: {fileID: 0}
   informationText: Victim's girlfriend, they've been dating for a few years. Lately
     had issues with the victim because of his latest novel. There he tells about
-    her real mariage and how she was stealing from her husband to finance the victims
+    her real mariage and how she was stealing from her husband to finance the victim's
     novels.
   OverrideInfo:
   - {fileID: 11400000, guid: a23a9da0ae2132e48856e889eea1abb6, type: 2}
