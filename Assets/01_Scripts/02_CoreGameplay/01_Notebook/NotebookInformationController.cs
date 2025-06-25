@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using ArthemyDev.ScriptsTools;
+using NUnit.Framework;
 using TMPro;
 using UnityEngine;
 
@@ -8,12 +9,18 @@ public class NotebookInformationController : MonoBehaviour
 {
 
     [SerializeField] private GameObject TextTemplate;
+    [SerializeField] private GameObject SuspectTemplate;
+    [SerializeField] private float TextTemplateSize;
+    [SerializeField] private float SuspectsTemplateSize;
+    [SerializeField] private float PadingSize;
     [SerializeField] private RectTransform SuspectParent;
     //[SerializeField] private List<Information> SusInfo;
     [SerializeField] private RectTransform LeadsParent;
     //[SerializeField] private List<Information> LeadsInfo;
     [SerializeField] private RectTransform FactsParent;
     //[SerializeField] private List<Information> FactsInfo;
+
+    [SerializeField] private Dictionary<Information, GameObject> PrevInfo = new Dictionary<Information, GameObject>();
 
 
     private void OnEnable()
@@ -27,39 +34,65 @@ public class NotebookInformationController : MonoBehaviour
         LeadsInfo = new List<Information>();
         FactsInfo = new List<Information>();*/
         
-        ScriptsTools.DestroyAllChildrens(SuspectParent);
+        /*ScriptsTools.DestroyAllChildrens(SuspectParent);
         ScriptsTools.DestroyAllChildrens(LeadsParent);
-        ScriptsTools.DestroyAllChildrens(FactsParent);
+        ScriptsTools.DestroyAllChildrens(FactsParent);*/
+
+        List<Information> infoToRemove= new List<Information>();
+        
+        foreach (var key in PrevInfo.Keys)
+        {
+            if (!InformationManager.current.InformationList.Contains(key))
+            {
+                Destroy(PrevInfo[key]);
+                infoToRemove.Add(key);
+               
+            }
+        }
+
+        foreach (var key in infoToRemove)
+        {
+            PrevInfo.Remove(key);
+        }
 
         for (int i = 0; i < InformationManager.current.InformationList.Count; i++)
         {
+            if(PrevInfo.ContainsKey(InformationManager.current.InformationList[i])) continue;
+            
             switch (InformationManager.current.InformationList[i].type)
             {
                 case InfoTypes.SUSPECTS:
-                    TMP_Text temp1 = Instantiate(TextTemplate, SuspectParent).GetComponent<TMP_Text>();
-                    temp1.text = InformationManager.current.InformationList[i].informationText;
-                    temp1.gameObject.SetActive(true);
-                    SuspectParent.sizeDelta = new Vector2(SuspectParent.sizeDelta.x, SuspectParent.sizeDelta.y + temp1.rectTransform.sizeDelta.y + 25);
-                    
+                    SetUpNewInfo(SuspectTemplate,InformationManager.current.InformationList[i],SuspectParent);
                     break;
                 case InfoTypes.LEADS:
-                    TMP_Text temp2 = Instantiate(TextTemplate, LeadsParent).GetComponent<TMP_Text>();
-                    temp2.text = InformationManager.current.InformationList[i].informationText;
-                    temp2.gameObject.SetActive(true);
-                    LeadsParent.sizeDelta = new Vector2(LeadsParent.sizeDelta.x, LeadsParent.sizeDelta.y + temp2.rectTransform.sizeDelta.y + 25);
-                    
+                    SetUpNewInfo(TextTemplate,InformationManager.current.InformationList[i],LeadsParent);
                     break;
                 case InfoTypes.FACTS:
-                    TMP_Text temp3 = Instantiate(TextTemplate, FactsParent).GetComponent<TMP_Text>();
-                    temp3.text = InformationManager.current.InformationList[i].informationText;
-                    temp3.gameObject.SetActive(true);
-                    FactsParent.sizeDelta = new Vector2(FactsParent.sizeDelta.x, FactsParent.sizeDelta.y + temp3.rectTransform.sizeDelta.y + 25);
-                    
+                    SetUpNewInfo(TextTemplate,InformationManager.current.InformationList[i],FactsParent);
                     break;
             }
         }
         
+        SetContainerHeight(SuspectParent, SuspectsTemplateSize);
+        SetContainerHeight(LeadsParent, TextTemplateSize);
+        SetContainerHeight(FactsParent, TextTemplateSize);
         
+        
+    }
+
+    private void SetUpNewInfo(GameObject template,Information info, RectTransform parent)
+    {
+        var temp = Instantiate(template, parent).GetComponent<InfoTextController>();
+        temp.SetInfo(info.informationText, info.icon);
+        temp.gameObject.SetActive(true);
+        PrevInfo.Add(info, temp.gameObject);
+    }
+
+    private void SetContainerHeight(RectTransform container, float templateSize)
+    {
+        var newHeight = (container.childCount * templateSize) + (container.childCount * PadingSize);
+         
+        container.sizeDelta = new Vector2(container.sizeDelta.x, newHeight);
     }
 
 }

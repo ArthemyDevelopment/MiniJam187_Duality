@@ -15,6 +15,7 @@ public class PresentClueToWitnes : BaseAction
     
     public override void TriggerAction()
     {
+        if (InteractionsManager.current.GetSelectedItem() == null) return;
         base.TriggerAction();
         CheckClue();
     }

@@ -52,6 +52,7 @@ MonoBehaviour:
   MultiInformation:
   - {fileID: 11400000, guid: b8989a8b7fffeec49bc65abac119847f, type: 2}
   - {fileID: 11400000, guid: e7b1b28f82393b54f903d4b831bcda17, type: 2}
+  - {fileID: 11400000, guid: 7c2a6ab8c8b00d14db58cd1970d23f10, type: 2}
   - {fileID: 11400000, guid: 4e6b31e30bde2b746928c03ac60c948a, type: 2}
   - {fileID: 11400000, guid: aba0c6a2cf8154e4db96253224fb4dee, type: 2}
   ForceReplaceClue: 0

@@ -23,9 +23,8 @@ MonoBehaviour:
     SerializationNodes: []
   type: 2
   icon: {fileID: 0}
-  informationText: The new draft reveals that the vicitm plagiarised on his firsts
-    books. His best friend knew about this and help him get away with it creating
-    a publishing house, getting both rich in the process.
+  informationText: The vicitm plagiarised his firsts books. His best friend knew
+    and help him get away with it creating a publishing house.
   OverrideInfo:
   - {fileID: 11400000, guid: afba28270e0af4d4884bc8e79327aeab, type: 2}
   - {fileID: 11400000, guid: 822548fe85ef75a40ac58c2d0ee4c7ef, type: 2}

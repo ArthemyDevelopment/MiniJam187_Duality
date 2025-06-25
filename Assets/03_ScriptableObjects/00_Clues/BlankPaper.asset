@@ -58,7 +58,8 @@ MonoBehaviour:
   Reusable: 0
   Icon: {fileID: 21300000, guid: e09713fc5e6dd2040a59a3e89936164c, type: 3}
   Name: Blank paper
-  Description: A blank paper found in the victim's room.
+  Description: A weird blank paper found in the victim's room. Maybe someone knows
+    what this is.
   GiveInformation: 0
   multipleInformation: 0
   ClueInformation: {fileID: 0}

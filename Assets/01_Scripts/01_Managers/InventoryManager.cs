@@ -30,6 +30,9 @@ public class InventoryManager : SingletonManager<InventoryManager>
             if(clue.GetForceToReplace()) RemoveClue(clue.clueToReplace);
             InventorySlots[i].StoreClue(clue);
             CluesInInventory.Add(clue);
+            
+            NotificationAlert.current.TriggerNotificationNewClueDescription();
+            
             break;
         }
     }

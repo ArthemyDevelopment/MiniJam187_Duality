@@ -24,6 +24,6 @@ MonoBehaviour:
   type: 2
   icon: {fileID: 0}
   informationText: The broken statuette match with the victim's head trauma. At some
-    point the victim was hit in the head with the statuette, breaking it in the process.
+    point the victim was hit in the head with the statuette.
   OverrideInfo: []
   BlockedByInfo: []
