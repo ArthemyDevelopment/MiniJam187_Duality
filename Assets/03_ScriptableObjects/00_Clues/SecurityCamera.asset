@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af15be85875445a4f868b706a07ea84b, type: 3}
+  m_Name: SecurityCamera
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 11400000, guid: 6fb6d5f51e4b9294dac4b71c6c8d08fd, type: 2}
+    - {fileID: 11400000, guid: 8c20fb5a8672fb34995b12e48996abed, type: 2}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: Combinations
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[Clue, Assembly-CSharp],[Clue,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.ObjectEqualityComparer`1[[Clue, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 0
+    - Name: $v
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  Reusable: 0
+  Icon: {fileID: 21300000, guid: 9f02f1cfc2b0fb34d8280cca6b0e9f5e, type: 3}
+  Name: Security Camera footage
+  Description: Footage from the security camera in the front door. Shows a lot of
+    people entering and leaving the house but no way of identifing them.
+  GiveInformation: 1
+  multipleInformation: 0
+  ClueInformation: {fileID: 11400000, guid: a40e82d8a9fd94347b3ba72e175eee09, type: 2}
+  MultiInformation: []
+  ForceReplaceClue: 0
+  clueToReplace: {fileID: 0}

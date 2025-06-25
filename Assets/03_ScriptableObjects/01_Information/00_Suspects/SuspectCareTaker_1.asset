@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8add0fd47251b524295dc07f2948b2c2, type: 3}
+  m_Name: SuspectCareTaker_1
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  type: 0
+  icon: {fileID: 21300000, guid: d65b1f7f556640f49b1dfbf44f0d380e, type: 3}
+  informationText: "Victim's house care taker, he insist he is not a butler. \n\nFound
+    the victim in his office."
+  OverrideInfo: []
+  BlockedByInfo:
+  - {fileID: 11400000, guid: 22fcbda65a06a9045b407e17b1417a4b, type: 2}
