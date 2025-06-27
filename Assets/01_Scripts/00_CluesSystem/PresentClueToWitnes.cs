@@ -43,6 +43,7 @@ public class PresentClueToWitnes : BaseAction
     }
 }
 
+//Can't fix typo cause reset the values in inspector.
 [Serializable]
 public struct WitnesInformation
 {
