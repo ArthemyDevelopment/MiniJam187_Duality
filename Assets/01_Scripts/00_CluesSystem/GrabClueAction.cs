@@ -1,10 +1,11 @@
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class GrabClueAction : BaseAction
 {
-    [SerializeField] private Clue clue;
-    [SerializeField] private bool deactivateOnGrab;
-    [SerializeField] private bool clueGrabed;
+    [BoxGroup("GrabClueProperties")][SerializeField] private Clue clue;
+    [BoxGroup("GrabClueProperties")][SerializeField] private bool deactivateOnGrab;
+    [BoxGroup("GrabClueProperties")][SerializeField] private bool clueGrabed;
     public bool isClueGrabed() { return clueGrabed; }
     
     public override void TriggerAction()

@@ -7,13 +7,13 @@ using UnityEngine.UI;
 
 public class DialogManager : MonoBehaviour
 {
-    public GameObject Mouse;
-    public GameObject OpenNotebook;
+    [SerializeField]private GameObject Mouse;
+    [SerializeField]private GameObject OpenNotebook;
 
-    public GameObject DialogBox;
-    public Image DialogChrIcon;
-    public TMP_Text DialogTextArea;
-    public float delayTextChar;
+    [SerializeField]private GameObject DialogBox;
+    [SerializeField]private Image DialogChrIcon;
+    [SerializeField]private TMP_Text DialogTextArea;
+    [SerializeField]private float delayTextChar;
     private Coroutine ShowTextCoroutine;
     private bool showingText;
     private bool isTextComplete;
@@ -55,7 +55,7 @@ public class DialogManager : MonoBehaviour
         showingText = false;
     }
 
-    public void Update()
+    private void Update()
     {
         if (!showingText) return;
         if (Input.GetMouseButtonDown(0))

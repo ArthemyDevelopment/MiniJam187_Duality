@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 using UnityEngine;
 using UnityEngine.Events;
@@ -7,9 +8,9 @@ using UnityEngine.Events;
 public class PresentClueToWitnes : BaseAction
 {
 
-    [OdinSerialize]private Dictionary<Clue, WitnesInformation> GetInfo;
+    [BoxGroup("PresentClueToWitness")][OdinSerialize]private Dictionary<Clue, WitnesInformation> GetInfo;
 
-    public UnityEvent OnNoInteraction;
+    [BoxGroup("PresentClueToWitness")][SerializeField] private UnityEvent OnNoInteraction;
 
     private bool isUsed;
     
@@ -43,6 +44,7 @@ public class PresentClueToWitnes : BaseAction
     }
 }
 
+//Can't fix typo cause reset the values in inspector.
 [Serializable]
 public struct WitnesInformation
 {

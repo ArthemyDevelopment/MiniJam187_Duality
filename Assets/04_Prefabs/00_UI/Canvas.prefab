@@ -98,7 +98,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  minimunEnergyRequired: 80
+  minimunEnergyRequired: 100
   TotalEnergy: 0
   EnergyBar: {fileID: 7348129034208334834}
 --- !u!1 &455183395500534243

@@ -1,15 +1,16 @@
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class CareTakerDiaryFirst : MonoBehaviour
 {
 
-    public List<Information> InfoShowCaretakerFirst;
-    public List<Information> InfoShowOthersFirst;
-
-    public UnityEvent OnFirst;
-    public UnityEvent OnOther;
+    [BoxGroup("InfoToShow")][SerializeField] private List<Information> InfoShowCaretakerFirst;
+    [BoxGroup("InfoToShow")][SerializeField] private List<Information> InfoShowOthersFirst;
+    
+    [BoxGroup("Events")][SerializeField] private UnityEvent OnFirst;
+    [BoxGroup("Events")][SerializeField] private UnityEvent OnOther;
     
     
     

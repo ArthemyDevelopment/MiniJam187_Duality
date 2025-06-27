@@ -10,9 +10,7 @@ public class CheckEnding : MonoBehaviour
 
     public void DefineEnding()
     {
-        if (SolveCrimeController.MotiveSolutionClue == CorrectMotive &&
-            SolveCrimeController.WeaponSolutionClue == CorrectWeapon &&
-            SolveCrimeController.KeyEvidenceSolutionClue == CorrectOportunity)
+        if (SolveCrimeController.CheckCorrectSolution(CorrectMotive, CorrectWeapon, CorrectOportunity))
         {
             if (EnergyManager.current.IsSolutionOnTime())
             {

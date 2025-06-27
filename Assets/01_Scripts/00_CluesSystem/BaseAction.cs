@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class BaseAction : SerializedMonoBehaviour
 {
-    [SerializeField] private float EnergyCost;
-    [SerializeField] private bool hasCollider = true;
-    [HideIf("@this.hasCollider == false")][SerializeField] private Collider2D hitbox;
+    [BoxGroup("Base Action properties")][SerializeField] private float EnergyCost;
+    [BoxGroup("Base Action properties")][SerializeField] private bool hasCollider = true;
+    [BoxGroup("Base Action properties")][HideIf("@this.hasCollider == false")][SerializeField] private Collider2D hitbox;
 
 
     private void OnEnable()

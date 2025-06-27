@@ -35,7 +35,7 @@ public class EnergyManager : SingletonManager<EnergyManager>
     }
 
     [Button]
-    public void SetEnergyLow() { CurrentEnergy = 1;}
+    public void DEBUG_SetEnergyLow() { CurrentEnergy = 1;}
     
     
     private void CheckEnergyRemaining()

@@ -1,65 +1,73 @@
-using System;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class NotebookSolveCrimeController : MonoBehaviour
 {
-    public SolutionClue WeaponSolutionClue;
-    [SerializeField] private InventorySlotController WeaponSlot;
-    public SolutionClue MotiveSolutionClue;
-    [SerializeField] private InventorySlotController MotiveSlot;
-    public SolutionClue KeyEvidenceSolutionClue;
-    [SerializeField] private InventorySlotController KeyEvidenceSlot;
+    [BoxGroup("Solutions")]
+    [BoxGroup("Solutions")][SerializeField] private GameObject SolveCrimeButton;
+    [BoxGroup("Solutions/Slots")][SerializeField] private InventorySlotController WeaponSlot;
+    [BoxGroup("Solutions/Slots")][SerializeField] private InventorySlotController MotiveSlot;
+    [BoxGroup("Solutions/Slots")][SerializeField] private InventorySlotController OpportunitySlot;
+    [BoxGroup("Solutions/CorrectClues")][SerializeField] private SolutionClue WeaponSolutionClue;
+    [BoxGroup("Solutions/CorrectClues")][SerializeField] private SolutionClue MotiveSolutionClue;
+    [BoxGroup("Solutions/CorrectClues")][SerializeField] private SolutionClue OpportunitySolutionClue;
 
-    [SerializeField] private GameObject SolveCrimeButton;
 
+
+    public bool CheckCorrectSolution(SolutionClue motive, SolutionClue weapon, SolutionClue oportunity)
+    {
+        return (motive == MotiveSolutionClue &&
+                weapon == WeaponSolutionClue &&
+                oportunity == OpportunitySolutionClue);
+    }
 
     private void OnEnable()
     {
         SolveCrimeButton.SetActive(false);
-        CheckSolutions();
+        CheckAllEvidence();
     }
 
-    public void CheckSolutionWeapon(Clue clue)
+    public void SetSolutionWeapon(Clue clue)
     {
 
         if (clue.GetType() != typeof(SolutionClue)) return;
 
-        if ((clue as SolutionClue).type != SolutionTypes.WEAPON) return;
+        if ((clue as SolutionClue).GetType() != SolutionTypes.WEAPON) return;
         
         WeaponSolutionClue = clue as SolutionClue;
         WeaponSlot.StoreClue(clue);
         
-        CheckSolutions();
+        CheckAllEvidence();
         
     }
     
-    public void CheckSolutionMotive(Clue clue)
+    public void SetSolutionMotive(Clue clue)
     {
         if (clue.GetType() != typeof(SolutionClue)) return;
-        if ((clue as SolutionClue).type != SolutionTypes.MOTIVE) return;
+        if ((clue as SolutionClue).GetType() != SolutionTypes.MOTIVE) return;
         
         MotiveSolutionClue = clue as SolutionClue;
         MotiveSlot.StoreClue(clue);
         
-        CheckSolutions();
+        CheckAllEvidence();
         
     }
     
-    public void CheckSolutionKeyEvidence(Clue clue)
+    public void SetSolutionOpportunity(Clue clue)
     {
         if (clue.GetType() != typeof(SolutionClue)) return;
-        if ((clue as SolutionClue).type != SolutionTypes.KEYEVIDENCE) return;
+        if ((clue as SolutionClue).GetType() != SolutionTypes.OPPORTUNITY) return;
         
-        KeyEvidenceSolutionClue = clue as SolutionClue;
-        KeyEvidenceSlot.StoreClue(clue);
+        OpportunitySolutionClue = clue as SolutionClue;
+        OpportunitySlot.StoreClue(clue);
         
-        CheckSolutions();
+        CheckAllEvidence();
         
     }
 
-    private void CheckSolutions()
+    private void CheckAllEvidence()
     {
-        if (WeaponSlot.IsClueInSlot() && MotiveSlot.IsClueInSlot() && KeyEvidenceSlot.IsClueInSlot())
+        if (WeaponSlot.IsClueInSlot() && MotiveSlot.IsClueInSlot() && OpportunitySlot.IsClueInSlot())
             SolveCrimeButton.SetActive(true);
     }
     

@@ -1,10 +1,11 @@
 using System;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class ChangeLocationAction : BaseAction
 {
-    public Transform LocationTarget;
-    public GameObject WorldCanvas;
+    [BoxGroup("ChangeLocationActionProperties")][SerializeField] private Transform LocationTarget;
+    [BoxGroup("ChangeLocationActionProperties")][SerializeField] private GameObject WorldCanvas;
 
 
     private void OnTriggerEnter2D(Collider2D other)

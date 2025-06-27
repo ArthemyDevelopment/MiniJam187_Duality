@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class InitianGameConfigManager : MonoBehaviour
 {
-    public ChangeLocationAction StartLocation;
-    public List<Clue> StartingItems;
-    public List<Information> StartingInfo;
+    [SerializeField]private ChangeLocationAction StartLocation;
+    [SerializeField]private List<Clue> StartingItems;
+    [SerializeField]private List<Information> StartingInfo;
 
     private void Start()
     {

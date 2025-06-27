@@ -8,15 +8,13 @@ public class NotebookMouse : MonoBehaviour
 
     [SerializeField] private Image Icon;
     [SerializeField] private Sprite Default;
+
+    [SerializeField] private CombineSlot CombinationSlotHover;
+    [SerializeField] private SolutionSlot SolutionSlotHover;
     
-    public bool OnCombineSlot_1;
-    public bool OnCombineSlot_2;
-
-    public bool OnWeaponSolutionSlot;
-    public bool OnMotiveSolutionSlot;
-    public bool OnKeyEvidenceSolutionSlot;
-
-
+    public CombineSlot GetCombineSlotHover() {return CombinationSlotHover;}
+    public SolutionSlot GetSolutionSlotHover(){return SolutionSlotHover;}
+    
     private void OnEnable()
     {
         //Icon.raycastTarget = false;
@@ -46,20 +44,35 @@ public class NotebookMouse : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("NotebookInventoryCombineSlot_1")) OnCombineSlot_1=true;
-        else if (other.CompareTag("NotebookInventoryCombineSlot_2")) OnCombineSlot_2=true;
-        else if (other.CompareTag("NotebookSolutionWeapon")) OnWeaponSolutionSlot = true;
-        else if (other.CompareTag("NotebookSolutionMotive")) OnMotiveSolutionSlot = true;
-        else if (other.CompareTag("NotebookSolutionKeyEvidence")) OnKeyEvidenceSolutionSlot = true;
+        if (other.CompareTag("NotebookInventoryCombineSlot_1")) CombinationSlotHover= CombineSlot.SLOT1;
+        else if (other.CompareTag("NotebookInventoryCombineSlot_2")) CombinationSlotHover= CombineSlot.SLOT2;
+        else if (other.CompareTag("NotebookSolutionWeapon")) SolutionSlotHover= SolutionSlot.WEAPON;
+        else if (other.CompareTag("NotebookSolutionMotive")) SolutionSlotHover= SolutionSlot.MOTIVE;
+        else if (other.CompareTag("NotebookSolutionKeyEvidence")) SolutionSlotHover= SolutionSlot.OPORTUNITY;
         
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("NotebookInventoryCombineSlot_1")) OnCombineSlot_1=false;
-        else if (other.CompareTag("NotebookInventoryCombineSlot_2")) OnCombineSlot_2=false;
-        else if (other.CompareTag("NotebookSolutionWeapon")) OnWeaponSolutionSlot = false;
-        else if (other.CompareTag("NotebookSolutionMotive")) OnMotiveSolutionSlot = false;
-        else if (other.CompareTag("NotebookSolutionKeyEvidence")) OnKeyEvidenceSolutionSlot = false;
+        if (other.CompareTag("NotebookInventoryCombineSlot_1")) CombinationSlotHover= CombineSlot.NULL;
+        else if (other.CompareTag("NotebookInventoryCombineSlot_2")) CombinationSlotHover= CombineSlot.NULL;
+        else if (other.CompareTag("NotebookSolutionWeapon")) SolutionSlotHover= SolutionSlot.NULL;
+        else if (other.CompareTag("NotebookSolutionMotive")) SolutionSlotHover= SolutionSlot.NULL;
+        else if (other.CompareTag("NotebookSolutionKeyEvidence")) SolutionSlotHover= SolutionSlot.NULL;
     }
+}
+
+public enum CombineSlot
+{
+    NULL,
+    SLOT1,
+    SLOT2,
+}
+
+public enum SolutionSlot
+{
+    NULL,
+    MOTIVE,
+    WEAPON,
+    OPORTUNITY
 }

@@ -49,8 +49,7 @@ public class NotebookInventoryController : MonoBehaviour
         CombineButton.SetActive(false);
         CombinationSlot_1.RemoveClue();
         CombinationSlot_2.RemoveClue();
-        combinationAction.firstSelected = null;
-        combinationAction.secondSelected = null;
+        combinationAction.ResetClues();
     }
 
 
@@ -73,27 +72,34 @@ public class NotebookInventoryController : MonoBehaviour
 
     public void DropClue()
     {
-        if (notebookMouse.OnCombineSlot_1)
+        if (notebookMouse.GetCombineSlotHover() != CombineSlot.NULL)
         {
-            combinationAction.firstSelected = DragedClue;
-            CombinationSlot_1.StoreClue(DragedClue);
+            switch (notebookMouse.GetCombineSlotHover())
+            {
+                case CombineSlot.SLOT1:
+                    combinationAction.SetFirstClue(DragedClue);
+                    CombinationSlot_1.StoreClue(DragedClue);
+                    break;
+                case CombineSlot.SLOT2:
+                    combinationAction.SetSecondClue(DragedClue);
+                    CombinationSlot_2.StoreClue(DragedClue);
+                    break;
+            }
         }
-        else if (notebookMouse.OnCombineSlot_2)
+        else if (notebookMouse.GetSolutionSlotHover() != SolutionSlot.NULL)
         {
-            combinationAction.secondSelected = DragedClue;
-            CombinationSlot_2.StoreClue(DragedClue);
-        }
-        else if (notebookMouse.OnWeaponSolutionSlot)
-        {
-            NotebookManager.current.SolveCrimeController.CheckSolutionWeapon(DragedClue);
-        }
-        else if (notebookMouse.OnMotiveSolutionSlot)
-        {
-            NotebookManager.current.SolveCrimeController.CheckSolutionMotive(DragedClue);
-        }
-        else if (notebookMouse.OnKeyEvidenceSolutionSlot)
-        {
-            NotebookManager.current.SolveCrimeController.CheckSolutionKeyEvidence(DragedClue);
+            switch (notebookMouse.GetSolutionSlotHover())
+            {
+                case SolutionSlot.MOTIVE:
+                    NotebookManager.current.SolveCrimeController.SetSolutionMotive(DragedClue);
+                    break;
+                case SolutionSlot.WEAPON:
+                    NotebookManager.current.SolveCrimeController.SetSolutionWeapon(DragedClue);
+                    break;
+                case SolutionSlot.OPORTUNITY:
+                    NotebookManager.current.SolveCrimeController.SetSolutionOpportunity(DragedClue);
+                    break;
+            }
         }
         
         CheckCombinationSlots();

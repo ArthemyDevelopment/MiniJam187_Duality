@@ -1,10 +1,11 @@
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class CombineCluesAction : BaseAction
 {
 
-    public Clue firstSelected;
-    public Clue secondSelected;
+    [BoxGroup("CombineCluesProperties")][SerializeField] private Clue firstSelected;
+    [BoxGroup("CombineCluesProperties")][SerializeField] private Clue secondSelected;
     
     
     public override void TriggerAction()
@@ -12,6 +13,14 @@ public class CombineCluesAction : BaseAction
         base.TriggerAction();
         
     }
+
+    public void SetFirstClue(Clue item) { firstSelected = item; }
+    public void SetSecondClue(Clue item) { secondSelected = item; }
+
+    public void ResetClues() { firstSelected = null; secondSelected = null; }
+    
+    public Clue GetFirstClue() {return firstSelected;}
+    public Clue GetSecondClue() {return secondSelected;}
 
     public Clue CluesCombination()
     {

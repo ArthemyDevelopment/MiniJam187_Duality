@@ -1,26 +1,20 @@
-using System;
 using System.Collections.Generic;
-using ArthemyDev.ScriptsTools;
-using NUnit.Framework;
-using TMPro;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class NotebookInformationController : MonoBehaviour
 {
-
-    [SerializeField] private GameObject TextTemplate;
-    [SerializeField] private GameObject SuspectTemplate;
-    [SerializeField] private float TextTemplateSize;
-    [SerializeField] private float SuspectsTemplateSize;
-    [SerializeField] private float PadingSize;
-    [SerializeField] private RectTransform SuspectParent;
-    //[SerializeField] private List<Information> SusInfo;
-    [SerializeField] private RectTransform LeadsParent;
-    //[SerializeField] private List<Information> LeadsInfo;
-    [SerializeField] private RectTransform FactsParent;
-    //[SerializeField] private List<Information> FactsInfo;
-
-    [SerializeField] private Dictionary<Information, GameObject> PrevInfo = new Dictionary<Information, GameObject>();
+    [BoxGroup("Information Holders")]
+    [BoxGroup("Information Holders/Parents")][SerializeField] private RectTransform SuspectParent;
+    [BoxGroup("Information Holders/Parents")][SerializeField] private RectTransform LeadsParent;
+    [BoxGroup("Information Holders/Parents")][SerializeField] private RectTransform FactsParent;
+    [BoxGroup("Information Holders/Templates")][SerializeField] private GameObject TextTemplate;
+    [BoxGroup("Information Holders/Templates")][SerializeField] private GameObject SuspectTemplate;
+    [BoxGroup("Information Holders/SizeController")][SerializeField] private float PadingSize;
+    [BoxGroup("Information Holders/SizeController")][SerializeField] private float TextTemplateSize;
+    [BoxGroup("Information Holders/SizeController")][SerializeField] private float SuspectsTemplateSize;
+    
+    private Dictionary<Information, GameObject> PrevInfo = new Dictionary<Information, GameObject>();
 
 
     private void OnEnable()
@@ -30,13 +24,7 @@ public class NotebookInformationController : MonoBehaviour
 
     public void OrganizeInformation()
     {
-        /*SusInfo = new List<Information>();
-        LeadsInfo = new List<Information>();
-        FactsInfo = new List<Information>();*/
-        
-        /*ScriptsTools.DestroyAllChildrens(SuspectParent);
-        ScriptsTools.DestroyAllChildrens(LeadsParent);
-        ScriptsTools.DestroyAllChildrens(FactsParent);*/
+
 
         List<Information> infoToRemove= new List<Information>();
         

@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
-    public string SceneName;
+    [SerializeField]private string SceneName;
     
     public void changeScene()
     {

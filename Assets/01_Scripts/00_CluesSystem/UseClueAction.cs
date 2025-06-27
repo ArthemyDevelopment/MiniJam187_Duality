@@ -1,10 +1,11 @@
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class UseClueAction : BaseAction
 {
-    [SerializeField] private Clue requiredClue;
-    [SerializeField] private UnityEvent OnUse;
+    [BoxGroup("UseClueProperties")][SerializeField] private Clue requiredClue;
+    [BoxGroup("UseClueProperties")][SerializeField] private UnityEvent OnUse;
 
     private bool isUsed;
     
